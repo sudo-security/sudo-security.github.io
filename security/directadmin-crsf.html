@@ -113,7 +113,7 @@ jQuery(window).on('load',  function() {
 		
 								<div itemprop="articleBody">
 		<h2>Vulnerability</h2>
-<p><strong>Etkilenen Yazılımlar:</strong> 1.56'nın altındaki DirectAdmin sürümleri</p>
+<p><strong>Etkilenen Yazılımlar:</strong> 1.60 ve altındaki DirectAdmin sürümleri</p>
 <p>2019 da InfinitiumIT Ekibi DirectAdmin'deki CVE:2019-11193 CSRF güvenlik açığı üzerinde rapor verdi, ancak incelediğimde gördüm ki (varsayılan olarak etkin) check_referer nedeniyle istismar çalışmıyor. Ancak yaptığım ufak bir analizden sonra check_referer bypass'a izin veren başka bir hata buldum.</p>
 <p>Eğer (<code>Referrer-Policy: no-referrer</code>) PHP Headerına başarılı bir şekilde ayarlandıktan sorna form isteği POST yerine GET olarak gönderilirse CRSF başarılı bir şekilde çalışır , aşşağıda vereceğim PoC kullanılarak başarılı bir şekilde yeni kullanıcı oluşturulabilir..</p>
 <h2>Exploit</h2>
