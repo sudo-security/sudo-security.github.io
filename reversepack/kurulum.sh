@@ -29,10 +29,16 @@ if [[ $secim == "Y" ]] || [[ $secim == "y" ]]
 then
 echo''	
 echo '[+] Kurulum Baslatiliyor...'
+echo ''
 sleep 1
 cd /bin
 
 #Dosyalari indir
+#18/03/2020 - Güncelleme
+wget https://raw.githubusercontent.com/sudo-security/rpack/master/arayici.sh
+wget https://raw.githubusercontent.com/sudo-security/rpack/master/adress.c
+wget https://raw.githubusercontent.com/sudo-security/rpack/master/clibfind.c
+#Eski
 wget https://raw.githubusercontent.com/sudo-security/rpack/master/aslrcontrol.c
 wget https://raw.githubusercontent.com/sudo-security/rpack/master/checkend.c
 wget https://raw.githubusercontent.com/sudo-security/rpack/master/pattern_fuzzer.c
@@ -42,6 +48,8 @@ wget https://raw.githubusercontent.com/sudo-security/rpack/master/suid_dump.c
 wget https://raw.githubusercontent.com/sudo-security/rpack/master/rpack-uninstall.c
 wget https://raw.githubusercontent.com/sudo-security/rpack/master/rmpack.sh
 git clone https://github.com/longld/peda.git ~/peda
+
+
 clear
 
 #Derle
@@ -52,9 +60,14 @@ gcc pattern_offset.c -o pattern_offset
 gcc peda.c -o peda
 gcc suid_dump.c -o suid_dump
 gcc rpack-uninstall.c -o rpack-uninstall
+gcc clibfind.c -o clibfind
+gcc adress.c -o adress
+
 clear
 
 #Indirilen Kaynaklari Sil
+rm clibfind.c
+rm adress.c
 rm aslrcontrol.c
 rm checkend.c
 rm pattern_fuzzer.c
